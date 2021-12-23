@@ -24,7 +24,7 @@ public class No<T> {
 	public No getProximoNo() {
 		return proximoNo;
 	}
-	public void setProximo(No proximoNo) {
+	public void setProximoNo(No proximoNo) {
 		this.proximoNo = proximoNo;
 	}
 
