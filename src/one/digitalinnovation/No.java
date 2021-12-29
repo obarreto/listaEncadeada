@@ -30,7 +30,7 @@ public class No<T> {
 
 	@Override
 	public String toString() {
-		return "No [conteudo=" + conteudo + ", proximoNo=" + proximoNo + "]";
+		return "No [conteudo= " + conteudo + ", proximoNo= " + proximoNo + "]";
 	}
 	
 	public String toStringEncadeado() {
