@@ -41,6 +41,7 @@ public class ListaEncadeada<T> {
 	}
 	
 	public T remove(int index) {
+		validaIndice(index);
 		No<T> noPivor = this.getNo(index);
 		if(index == 0) {
 			referenciaEntrada = noPivor.getProximoNo();
@@ -48,7 +49,7 @@ public class ListaEncadeada<T> {
 		}
 		
 		No<T> noAnterior = getNo(index -1);
-		noAnterior.setProximoNo(noAnterior.getProximoNo());
+		noAnterior.setProximoNo(noPivor.getProximoNo());
 		return noPivor.getConteudo();
 	}
 	
@@ -89,8 +90,8 @@ public class ListaEncadeada<T> {
 	public String toString() {
 		String strRetorno = "";
 		No<T> noAuxiliar = referenciaEntrada;
-		for(int i = 0; i < this.size(); i++) {
-			strRetorno += " No[conteudo= " + referenciaEntrada + "]";
+		for(int i = 0; i < size(); i++) {
+			strRetorno += " No[conteudo= " + noAuxiliar.getConteudo() + "]";
 			noAuxiliar = noAuxiliar.getProximoNo();
 		}
 		strRetorno += "null";
