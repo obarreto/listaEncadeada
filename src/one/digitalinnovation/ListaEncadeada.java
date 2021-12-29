@@ -40,6 +40,19 @@ public class ListaEncadeada<T> {
 		return noRetorno;
 	}
 	
+	public T remove(int index) {
+		No<T> noPivor = this.getNo(index);
+		if(index == 0) {
+			referenciaEntrada = noPivor.getProximoNo();
+			return noPivor.getConteudo();
+		}
+		
+		No<T> noAnterior = getNo(index -1);
+		noAnterior.setProximoNo(noAnterior.getProximoNo());
+		return noPivor.getConteudo();
+	}
+	
+	
 	public int size() {
 		int tamanhoLista = 0;
 		No<T> referenciaAux = referenciaEntrada;
